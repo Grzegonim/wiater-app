@@ -1,50 +1,38 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getTableById, editTableRequest } from "../../../../redux/tableReducer";
-import { getStatuses } from "../../../../redux/statusesReducer";
-import { Button } from "react-bootstrap";
-import { Form } from "react-bootstrap";
+import { getTableById } from "../../../redux/tableReducer";
+import TableHook from '../TableHook/TableHook';
+import { Button, Form, Spinner } from "react-bootstrap";
 import shortid from "shortid";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import style from './TableForm.module.scss'
 
 const TableForm = () => {
-  const naviget = useNavigate();
-  const dispatch = useDispatch();
   const { id } = useParams();
   const table = useSelector(state => getTableById(state, id));
-  
-  const statuses = useSelector(getStatuses);
-  const [ tableStatus, setTableStatus ] = useState(table.status);
-  const [ maxPeopleAmount, setMaxPeople ] = useState(table.maxPeopleAmount);
-  const [ peopleAmount, setPeople ] = useState(table.peopleAmount)
-  const [ bill, setBill ] = useState(table.bill)
-  const selectStatus = e => {
-    e.preventDefault();
-    setTableStatus(e.target.value)
-    if(e.target.value === 'Cleaning' || e.target.value === 'Free'){
-      setPeople('0')
-    }
-  };
-  const handleSubmit = e => {
-    e.preventDefault()
-    dispatch(editTableRequest( {status: tableStatus, maxPeopleAmount, peopleAmount, bill, id: table.id } ))
-    naviget(-1)
-  };
-  
-  if(!table) return <Navigate to="/" />
+  const {
+    tableStatus,
+    maxPeopleAmount,
+    peopleAmount,
+    bill,
+    handleSubmit, 
+    selectStatus, 
+    statuses,
+    setPeople,
+    setMaxPeople,
+    setBill
+  } = TableHook(table);
+
+  if(!table) return <Spinner animation="border" variant="primary" />;
   return (
     <div>
       <h1>Table {table.id}</h1>
       <Form onSubmit={e => handleSubmit(e)}>
         <Form.Group className="d-flex align-items-center mb-2">
           <div>
-          <Form.Label className={style.label}><b>Status: </b></Form.Label>
+            <Form.Label className={style.label}><b>Status: </b></Form.Label>
           </div>
           <Form.Select className={style.selectStatus} onChange={e => selectStatus(e)} value={tableStatus}>
-          {statuses.map(status => <option key={shortid()} value={status}>{status}</option>)}
+            {statuses.map(status => <option key={shortid()} value={status}>{status}</option>)}
           </Form.Select>
         </Form.Group>
         <Form.Group className="d-flex align-items-center mb-2">
@@ -57,7 +45,7 @@ const TableForm = () => {
             max={maxPeopleAmount} 
             onChange={e => setPeople(e.target.value)}
             ></Form.Control>
-          <p className="mb-0">/</p>
+            <p className="mb-0">/</p>
           <Form.Control
             className={style.people}
             type="number" 
@@ -79,12 +67,11 @@ const TableForm = () => {
             onChange={e => setBill(e.target.value)}
             >
           </Form.Control>
-          <p className="mb-0">$</p>
+            <p className="mb-0">$</p>
           </Form.Group>
-          }
+        }
         <Button className="mt-2" type="submit">Update</Button>
       </Form>
-
     </div>
   )
 };
