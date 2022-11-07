@@ -1,7 +1,7 @@
 {
   "tables": [
     {
-      "status": "Cleaning",
+      "status": "Free",
       "maxPeopleAmount": "4",
       "peopleAmount": "0",
       "bill": "0",
