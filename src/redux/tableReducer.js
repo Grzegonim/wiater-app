@@ -50,7 +50,7 @@ export const addTableRequest = (newTable) => {
 
     fetch(API_URL + '/tables', options)
     .then(res => res.json())
-    .then(tables => dispatch(updateTables(Object.keys(newTable))))
+    .then(tables => dispatch(addTable(newTable)))
   }
 };
 
@@ -78,7 +78,7 @@ const tablesReducer = (statePart = [], action) => {
     case REMOVE_TABLE:
       return statePart.filter(table => (table.id !== action.payload));
     case ADD_TABLE:
-      return [...statePart,  ...action.payload ]
+      return [...statePart,  ...Object.keys(action.payload) ]
     default:
       return statePart;
   };
