@@ -34,7 +34,7 @@ export const editTableRequest = (newTable) => {
     };
 
     fetch(API_URL + '/tables/' + newTable.id, options)
-    .then(() => dispatch(updateTables(newTable)))
+    .then(() => dispatch(editTable(newTable)))
   }
 };
 

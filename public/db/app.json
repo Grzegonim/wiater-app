@@ -1,10 +1,10 @@
 {
   "tables": [
     {
-      "status": "Free",
+      "status": "Busy",
       "maxPeopleAmount": "4",
-      "peopleAmount": "0",
-      "bill": "0",
+      "peopleAmount": "2",
+      "bill": "3",
       "id": "1"
     },
     {
