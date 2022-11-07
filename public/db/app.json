@@ -29,11 +29,18 @@
       "bill": ""
     },
     {
-      "id": "DqxO2VaUK",
+      "id": "RzzjYgkLC",
       "status": "Free",
-      "maxPeopleAmount": "2",
+      "maxPeopleAmount": "",
       "peopleAmount": "0",
       "bill": ""
+    },
+    {
+      "id": "5M6qDu1zY",
+      "status": "Busy",
+      "maxPeopleAmount": "2",
+      "peopleAmount": "1",
+      "bill": "3"
     }
   ]
 }
