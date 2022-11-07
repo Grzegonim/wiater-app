@@ -14,6 +14,7 @@ const TableForm = () => {
     maxPeopleAmount,
     peopleAmount,
     bill,
+    number,
     handleSubmit, 
     selectStatus, 
     statuses,
@@ -21,11 +22,10 @@ const TableForm = () => {
     setMaxPeople,
     setBill
   } = TableHook(table);
-
   if(!table) return <Spinner animation="border" variant="primary" />;
   return (
     <div>
-      <h1>Table {table.id}</h1>
+      <h1>Table {number + 1}</h1>
       <Form onSubmit={e => handleSubmit(e)}>
         <Form.Group className="d-flex align-items-center mb-2">
           <div>

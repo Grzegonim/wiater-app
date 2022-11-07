@@ -1,4 +1,5 @@
 import { editTableRequest } from "../../../redux/tableReducer";
+import { getTables } from "../../../redux/tableReducer";
 import { getStatuses } from "../../../redux/statusesReducer";
 import { useSelector } from "react-redux";
 import { useState } from "react";
@@ -9,10 +10,12 @@ const TableHook = (table) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const statuses = useSelector(getStatuses);
+  const tables = useSelector(getTables);
   const [ tableStatus, setTableStatus ] = useState(table ? table.status : null);
   const [ maxPeopleAmount, setMaxPeople ] = useState(table ? table.maxPeopleAmount : null);
   const [ peopleAmount, setPeople ] = useState(table ? table.peopleAmount : null);
   const [ bill, setBill ] = useState(table ? table.bill : null);
+  const number = tables.findIndex(x => {return x.id === table.id});
   const selectStatus = e => {
     e.preventDefault();
     setTableStatus(e.target.value)
@@ -33,6 +36,7 @@ const TableHook = (table) => {
     maxPeopleAmount,
     peopleAmount,
     bill,
+    number,
     selectStatus,
     handleSubmit,
     setTableStatus,

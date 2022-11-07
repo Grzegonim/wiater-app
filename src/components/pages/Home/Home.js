@@ -16,7 +16,9 @@ const Home = () => {
         {tables.map(table => <Table 
         id={table.id}
         status={table.status}
-        key={table.id}  
+        key={table.id}
+        number={tables.findIndex(x => {return x.id === table.id})}
+        {...table}
         />
         )}
     </div>  

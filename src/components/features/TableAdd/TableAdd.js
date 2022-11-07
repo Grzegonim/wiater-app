@@ -1,4 +1,3 @@
-import { getTables } from "../../../redux/tableReducer";
 import { addTableRequest } from "../../../redux/tableReducer";
 import { getStatuses } from "../../../redux/statusesReducer";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,11 +11,10 @@ import style from './TableAdd.module.scss'
 const TableAdd = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const tables = useSelector(getTables);
   const statuses = useSelector(getStatuses);
-  const [ tableStatus, setTableStatus ] = useState('');
+  const [ tableStatus, setTableStatus ] = useState('Free');
   const [ maxPeopleAmount, setMaxPeople ] = useState('');
-  const [ peopleAmount, setPeople ] = useState('');
+  const [ peopleAmount, setPeople ] = useState('0');
   const [ bill, setBill ] = useState('');
 
   const selectStatus = e => {
@@ -29,9 +27,8 @@ const TableAdd = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const id = tables.length + 1;
-    dispatch(addTableRequest({id, status: tableStatus, maxPeopleAmount, peopleAmount, bill}));
-    navigate(-1);
+    dispatch(addTableRequest({id: shortid(), status: tableStatus, maxPeopleAmount, peopleAmount, bill}));
+    navigate("/");
   };
 
   return (
