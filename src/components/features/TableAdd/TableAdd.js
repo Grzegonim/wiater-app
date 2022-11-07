@@ -27,7 +27,7 @@ const TableAdd = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addTableRequest({id: shortid(), status: tableStatus, maxPeopleAmount, peopleAmount, bill}));
+    dispatch(addTableRequest({id: shortid(), status: tableStatus, maxPeopleAmount: maxPeopleAmount, peopleAmount: peopleAmount, bill: bill }));
     navigate("/");
   };
 

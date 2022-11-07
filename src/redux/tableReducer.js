@@ -78,7 +78,7 @@ const tablesReducer = (statePart = [], action) => {
     case REMOVE_TABLE:
       return statePart.filter(table => (table.id !== action.payload));
     case ADD_TABLE:
-      return [...statePart,  Object.keys(action.payload) ]
+      return [...statePart, action.payload ]
     default:
       return statePart;
   };

@@ -15,70 +15,7 @@
       "bill": ""
     },
     {
-      "id": "_QgNWOCOd",
-      "status": "Busy",
-      "maxPeopleAmount": "2",
-      "peopleAmount": "1",
-      "bill": "5"
-    },
-    {
-      "id": "b6y6JaBiw",
-      "status": "Free",
-      "maxPeopleAmount": "2",
-      "peopleAmount": "0",
-      "bill": ""
-    },
-    {
-      "id": "RzzjYgkLC",
-      "status": "Free",
-      "maxPeopleAmount": "",
-      "peopleAmount": "0",
-      "bill": ""
-    },
-    {
-      "id": "5M6qDu1zY",
-      "status": "Busy",
-      "maxPeopleAmount": "2",
-      "peopleAmount": "1",
-      "bill": "3"
-    },
-    {
-      "id": "1dgiFVyHC",
-      "status": "Free",
-      "maxPeopleAmount": "",
-      "peopleAmount": "0",
-      "bill": ""
-    },
-    {
-      "id": "z-u66P9r2",
-      "status": "Free",
-      "maxPeopleAmount": "",
-      "peopleAmount": "0",
-      "bill": ""
-    },
-    {
       "id": "-YJPGKGKg",
-      "status": "Free",
-      "maxPeopleAmount": "",
-      "peopleAmount": "0",
-      "bill": ""
-    },
-    {
-      "id": "hI5qkXbGS",
-      "status": "Busy",
-      "maxPeopleAmount": "4",
-      "peopleAmount": "2",
-      "bill": "3"
-    },
-    {
-      "id": "UMoqZoQ2O",
-      "status": "Reserved",
-      "maxPeopleAmount": "3",
-      "peopleAmount": "2",
-      "bill": ""
-    },
-    {
-      "id": "uYMfLQzuZ",
       "status": "Free",
       "maxPeopleAmount": "",
       "peopleAmount": "0",
@@ -97,6 +34,20 @@
       "maxPeopleAmount": "3",
       "peopleAmount": "2",
       "bill": "3"
+    },
+    {
+      "id": "epRWkH5Hs",
+      "status": "Busy",
+      "maxPeopleAmount": "4",
+      "peopleAmount": "2",
+      "bill": "2"
+    },
+    {
+      "id": "Tq6Msi_wY",
+      "status": "Free",
+      "maxPeopleAmount": "",
+      "peopleAmount": "0",
+      "bill": ""
     }
   ]
 }
