@@ -41,6 +41,20 @@
       "maxPeopleAmount": "2",
       "peopleAmount": "1",
       "bill": "3"
+    },
+    {
+      "id": "1dgiFVyHC",
+      "status": "Free",
+      "maxPeopleAmount": "",
+      "peopleAmount": "0",
+      "bill": ""
+    },
+    {
+      "id": "z-u66P9r2",
+      "status": "Free",
+      "maxPeopleAmount": "",
+      "peopleAmount": "0",
+      "bill": ""
     }
   ]
 }

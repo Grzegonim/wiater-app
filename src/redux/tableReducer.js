@@ -50,7 +50,7 @@ export const addTableRequest = (newTable) => {
 
     fetch(API_URL + '/tables', options)
     .then(res => res.json())
-    .then(tables => dispatch(updateTables(newTable)))
+    .then(tables => dispatch(updateTables(Object.keys(newTable))))
   }
 };
 
