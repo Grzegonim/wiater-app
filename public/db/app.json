@@ -48,6 +48,13 @@
       "maxPeopleAmount": "",
       "peopleAmount": "0",
       "bill": ""
+    },
+    {
+      "id": "9UHFWKpNl",
+      "status": "Busy",
+      "maxPeopleAmount": "3",
+      "peopleAmount": "1",
+      "bill": "5"
     }
   ]
 }

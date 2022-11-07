@@ -13,9 +13,9 @@ const TableAdd = () => {
   const dispatch = useDispatch();
   const statuses = useSelector(getStatuses);
   const [ tableStatus, setTableStatus ] = useState('Free');
-  const [ maxPeopleAmount, setMaxPeople ] = useState('');
+  const [ maxPeopleAmount, setMaxPeople ] = useState('0');
   const [ peopleAmount, setPeople ] = useState('0');
-  const [ bill, setBill ] = useState('');
+  const [ bill, setBill ] = useState('0');
 
   const selectStatus = e => {
     e.preventDefault();
@@ -23,6 +23,10 @@ const TableAdd = () => {
     if(e.target.value === 'Cleaning' || e.target.value === 'Free'){
       setPeople('0')
     };
+    if(e.target.value === 'Busy'){
+      setPeople('1')
+      setMaxPeople('1')
+    }
   };
 
   const handleSubmit = e => {
