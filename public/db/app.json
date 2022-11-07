@@ -69,6 +69,27 @@
       "maxPeopleAmount": "4",
       "peopleAmount": "2",
       "bill": "3"
+    },
+    {
+      "id": "UMoqZoQ2O",
+      "status": "Reserved",
+      "maxPeopleAmount": "3",
+      "peopleAmount": "2",
+      "bill": ""
+    },
+    {
+      "id": "uYMfLQzuZ",
+      "status": "Free",
+      "maxPeopleAmount": "",
+      "peopleAmount": "0",
+      "bill": ""
+    },
+    {
+      "id": "JjHiCQSXY",
+      "status": "Free",
+      "maxPeopleAmount": "",
+      "peopleAmount": "0",
+      "bill": ""
     }
   ]
 }

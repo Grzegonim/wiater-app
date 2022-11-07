@@ -1,7 +1,7 @@
 import { API_URL } from "../config";
 //selectors
 export const getTables = state => state.tables;
-export const getTableById = ({ tables }, tableId) => tables.find(table => table.id.toString() === tableId.toString());
+export const getTableById = ({ tables }, tableId) => tables.find(table => table.id === tableId);
 
 //actions
 const createActionName = actionName => `app/tables/${actionName}`;
@@ -78,7 +78,7 @@ const tablesReducer = (statePart = [], action) => {
     case REMOVE_TABLE:
       return statePart.filter(table => (table.id !== action.payload));
     case ADD_TABLE:
-      return [...statePart,  ...Object.keys(action.payload) ]
+      return [...statePart,  Object.keys(...action.payload) ]
     default:
       return statePart;
   };
